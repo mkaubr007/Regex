@@ -8,10 +8,24 @@ public class RegexDemo {
     public static void main(String[] args) {
         RegexDemo regexDemo=new RegexDemo();
         regexDemo.firstName();
+        regexDemo.lastName();
     }
     public void firstName(){
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter first name");
+        String input=sc.next();
+        String regex="^[a-zA-Z]*$";
+        Pattern pattern=Pattern.compile(regex);
+        Matcher matcher=pattern.matcher(input);
+        if (matcher.matches()){
+            System.out.println("Valid");
+        }else {
+            System.out.println("Invalid");
+        }
+    }
+    public void lastName(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter last name");
         String input=sc.next();
         String regex="^[a-zA-Z]*$";
         Pattern pattern=Pattern.compile(regex);
