@@ -44,8 +44,97 @@ public class EmailValidationTest {
     @Test
     public void email_Validation_Seven(){
         EmailValidation validation=new EmailValidation();
-        boolean actualResult=validation.email("abc@1yahoo.nett.com");
+        boolean actualResult=validation.email("abc@1.com");
         Assert.assertTrue(actualResult);
     }
-//    "^[a-z0-9]+([_+-.][0-9a-z]+)*@[a-z0-9]+\.[a-z]+.([a-z]{2,3})$";
+    @Test
+    public void email_Validation_Eight(){
+        EmailValidation validation=new EmailValidation();
+        boolean actualResult=validation.email("abc@gmail.com.com");
+        Assert.assertTrue(actualResult);
+    }
+    @Test
+    public void email_Validation_Nine(){
+        EmailValidation validation=new EmailValidation();
+        boolean actualResult=validation.email("abc+100@gmail.com");
+        Assert.assertTrue(actualResult);
+    }
+    @Test
+    public void email_Validation_Ten(){
+        EmailValidation validation=new EmailValidation();
+        boolean actualResult=validation.email("abc");
+        Assert.assertFalse(actualResult);
+    }
+    @Test
+    public void email_Validation_Eleven(){
+        EmailValidation validation=new EmailValidation();
+        boolean actualResult=validation.email("abc@.com.my");
+        Assert.assertFalse(actualResult);
+    }
+    @Test
+    public void email_Validation_Twelve(){
+        EmailValidation validation=new EmailValidation();
+        boolean actualResult=validation.email("abc123@gmail.a");
+        Assert.assertFalse(actualResult);
+    }
+    @Test
+    public void email_Validation_Thirteen(){
+        EmailValidation validation=new EmailValidation();
+        boolean actualResult=validation.email("abc123@.com");
+        Assert.assertFalse(actualResult);
+    }
+    @Test
+    public void email_Validation_Fourteen(){
+        EmailValidation validation=new EmailValidation();
+        boolean actualResult=validation.email("abc123@.com.com");
+        Assert.assertFalse(actualResult);
+    }
+    @Test
+    public void email_Validation_Fifteen(){
+        EmailValidation validation=new EmailValidation();
+        boolean actualResult=validation.email(".abc@abc.com");
+        Assert.assertFalse(actualResult);
+    }
+    @Test
+    public void email_Validation_Sixteen(){
+        EmailValidation validation=new EmailValidation();
+        boolean actualResult=validation.email("abc()*@gmail.com");
+        Assert.assertFalse(actualResult);
+    }
+    @Test
+    public void email_Validation_Seventeen(){
+        EmailValidation validation=new EmailValidation();
+        boolean actualResult=validation.email("abc@%*.com");
+        Assert.assertFalse(actualResult);
+    }
+    @Test
+    public void email_Validation_Eighteen(){
+        EmailValidation validation=new EmailValidation();
+        boolean actualResult=validation.email("abc..2002@gmail.com");
+        Assert.assertFalse(actualResult);
+    }
+    @Test
+    public void email_Validation_Nineteen(){
+        EmailValidation validation=new EmailValidation();
+        boolean actualResult=validation.email("abc.@gmail.com");
+        Assert.assertFalse(actualResult);
+    }
+    @Test
+    public void email_Validation_Twenty(){
+        EmailValidation validation=new EmailValidation();
+        boolean actualResult=validation.email("abc@abc@gmail.com");
+        Assert.assertFalse(actualResult);
+    }
+    @Test
+    public void email_Validation_TwentyOne(){
+        EmailValidation validation=new EmailValidation();
+        boolean actualResult=validation.email("abc@gmail.com.1a");
+        Assert.assertFalse(actualResult);
+    }
+    @Test
+    public void email_Validation_TwentyTwo(){
+        EmailValidation validation=new EmailValidation();
+        boolean actualResult=validation.email("abc@gmail.com.aa.au");
+        Assert.assertFalse(actualResult);
+    }
 }
