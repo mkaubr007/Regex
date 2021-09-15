@@ -10,6 +10,7 @@ public class RegexDemo {
         RegexDemo regexDemo=new RegexDemo();
         System.out.println("Enter first name");
         regexDemo.firstName();
+        System.out.println("Enter last name");
         regexDemo.lastName();
         regexDemo.email();
         regexDemo.phoneNumber();
@@ -27,8 +28,6 @@ public class RegexDemo {
         }
     }
     public void lastName(){
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter last name");
         String input=sc.next();
         String regex="^[a-zA-Z]*$";
         Pattern pattern=Pattern.compile(regex);
