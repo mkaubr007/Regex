@@ -69,7 +69,7 @@ public class RegexDemo {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter password");
         String input=sc.next();
-        String regex="^[A-Za-z0-9]{8,}$";
+        String regex="^(?=.*[A-Z])[A-Za-z0-9]{8,}$";
         Pattern pattern=Pattern.compile(regex);
         Matcher matcher=pattern.matcher(input);
         if (matcher.matches()){
