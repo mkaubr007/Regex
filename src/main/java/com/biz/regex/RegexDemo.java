@@ -16,7 +16,7 @@ public class RegexDemo {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter first name");
         String input=sc.next();
-        String regex="^[a-zA-Z]*$";
+        String regex="^[A-Z]{1}[a-z]{2,}$";
         Pattern pattern=Pattern.compile(regex);
         Matcher matcher=pattern.matcher(input);
         if (matcher.matches()){
