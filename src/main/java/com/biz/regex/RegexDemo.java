@@ -67,7 +67,7 @@ public class RegexDemo {
     }
     public void password(){
         Scanner sc=new Scanner(System.in);
-        System.out.println("Enter mobile number");
+        System.out.println("Enter password");
         String input=sc.next();
         String regex="^[A-Za-z0-9]{8,}$";
         Pattern pattern=Pattern.compile(regex);
