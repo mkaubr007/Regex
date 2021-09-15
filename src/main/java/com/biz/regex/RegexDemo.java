@@ -14,6 +14,7 @@ public class RegexDemo {
         regexDemo.lastName();
         System.out.println("Enter email");
         regexDemo.email();
+        System.out.println("Enter mobile number");
         regexDemo.phoneNumber();
         regexDemo.password();
     }
@@ -51,8 +52,6 @@ public class RegexDemo {
         }
     }
     public void phoneNumber(){
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter mobile number");
         String input=sc.next();
         String regex="(?:(?:\\+|0{0,2})91(\\s*[\\-]\\s*)?|[0]?)?[789]\\d{9}$";
         Pattern pattern=Pattern.compile(regex);
