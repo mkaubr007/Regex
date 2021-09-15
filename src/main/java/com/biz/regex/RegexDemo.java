@@ -5,15 +5,17 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegexDemo {
+    Scanner sc=new Scanner(System.in);
     public static void main(String[] args) {
         RegexDemo regexDemo=new RegexDemo();
+        System.out.println("Enter first name");
         regexDemo.firstName();
+        System.out.println("Enter last name");
         regexDemo.lastName();
+        System.out.println("Enter email");
         regexDemo.email();
     }
     public void firstName(){
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter first name");
         String input=sc.next();
         String regex="^[a-zA-Z]*$";
         Pattern pattern=Pattern.compile(regex);
@@ -25,8 +27,6 @@ public class RegexDemo {
         }
     }
     public void lastName(){
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter last name");
         String input=sc.next();
         String regex="^[a-zA-Z]*$";
         Pattern pattern=Pattern.compile(regex);
@@ -38,8 +38,6 @@ public class RegexDemo {
         }
     }
     public void email(){
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter email");
         String input=sc.next();
         String regex="^[a-z0-9]+([_+-.][0-9a-z]+)*@[a-z]+.[a-z]{2,3}+.([a-z]{2,3})$";
         Pattern pattern=Pattern.compile(regex);
