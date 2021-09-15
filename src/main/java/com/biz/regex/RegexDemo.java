@@ -69,7 +69,7 @@ public class RegexDemo {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter mobile number");
         String input=sc.next();
-        String regex="^[A-za-z0-9]{8,}$";
+        String regex="^[A-Za-z0-9]{8,}$";
         Pattern pattern=Pattern.compile(regex);
         Matcher matcher=pattern.matcher(input);
         if (matcher.matches()){
