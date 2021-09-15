@@ -7,10 +7,11 @@ import java.util.regex.Pattern;
 public class RegexDemo {
     public static void main(String[] args) {
         RegexDemo regexDemo=new RegexDemo();
-//        regexDemo.firstName();
-//        regexDemo.lastName();
-//        regexDemo.email();
+        regexDemo.firstName();
+        regexDemo.lastName();
+        regexDemo.email();
         regexDemo.phoneNumber();
+        regexDemo.password();
     }
     public void firstName(){
         Scanner sc=new Scanner(System.in);
@@ -56,6 +57,19 @@ public class RegexDemo {
         System.out.println("Enter mobile number");
         String input=sc.next();
         String regex="(?:(?:\\+|0{0,2})91(\\s*[\\-]\\s*)?|[0]?)?[789]\\d{9}$";
+        Pattern pattern=Pattern.compile(regex);
+        Matcher matcher=pattern.matcher(input);
+        if (matcher.matches()){
+            System.out.println("Valid");
+        }else {
+            System.out.println("Invalid");
+        }
+    }
+    public void password(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter mobile number");
+        String input=sc.next();
+        String regex="^[A-za-z0-9]{8,}$";
         Pattern pattern=Pattern.compile(regex);
         Matcher matcher=pattern.matcher(input);
         if (matcher.matches()){
