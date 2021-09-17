@@ -33,7 +33,7 @@ public class UserValidationTest {
         try {
             actualResult = validation.email("mkaubr007@gmail.com");
         } catch (UserValidationException exception) {
-            Assert.assertEquals(actualResult, exception.message);
+            Assert.assertEquals(actualResult, exception);
         }
     }
 
